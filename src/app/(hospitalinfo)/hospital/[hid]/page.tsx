@@ -1,9 +1,7 @@
 "use client";
 
-import { MOCK_HOSPITALS } from "@/components/CardPanel";
 import getHospital from "@/libs/getHospital";
 import Image from "next/image";
-import { useParams } from "next/navigation";
 
 const HospitalDetailPage = async ({ params }: { params: { hid: string } }) => {
   const hospitalData = await getHospital(params.hid);
@@ -13,6 +11,7 @@ const HospitalDetailPage = async ({ params }: { params: { hid: string } }) => {
       <Image
         src={hospitalData?.data.picture}
         alt={hospitalData?.data.name}
+        className="w-1/2"
         width={300}
         height={300}
       />

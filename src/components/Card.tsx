@@ -23,12 +23,7 @@ const Card = ({
 }: CardProps) => {
   return (
     <InteractiveCard hid={hid}>
-      <Image
-        src={imgSrc}
-        alt="Chulalongkorn Hospital"
-        width={300}
-        height={300}
-      />
+      <Image src={imgSrc} alt="Vaccine Information" width={300} height={300} />
       <div className={styles.textContainer}>
         <h2>{hospitalName}</h2>
         <p>description</p>
