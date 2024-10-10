@@ -17,3 +17,10 @@ interface HospitalJson {
   pagination: Object;
   data: HospitalItem[];
 }
+
+interface SingleHospitalJson {
+  success: boolean;
+  count: number;
+  pagination: Object;
+  data: HospitalItem;
+}

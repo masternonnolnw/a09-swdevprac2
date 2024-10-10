@@ -6,9 +6,9 @@ import { Rating } from "@mui/material";
 interface CardProps {
   hospitalName: string;
   imgSrc: string;
-  hospitalRating: number;
+  hospitalRating?: number;
 
-  onRatingChange: (hospital: string, rating: number) => void;
+  onRatingChange?: (hospital: string, rating: number) => void;
 
   hid: string;
 }
@@ -27,15 +27,17 @@ const Card = ({
         <h2>{hospitalName}</h2>
         <p>description</p>
       </div>
-      <Rating
-        id={`${hospitalName} Rating`}
-        name={`${hospitalName} Rating`}
-        data-testid={`${hospitalName} Rating`}
-        value={hospitalRating}
-        onChange={(e, newValue) => {
-          onRatingChange(hospitalName, newValue ?? 0);
-        }}
-      />
+      {hospitalRating && (
+        <Rating
+          id={`${hospitalName} Rating`}
+          name={`${hospitalName} Rating`}
+          data-testid={`${hospitalName} Rating`}
+          value={hospitalRating}
+          onChange={(e, newValue) => {
+            onRatingChange && onRatingChange(hospitalName, newValue ?? 0);
+          }}
+        />
+      )}
     </InteractiveCard>
   );
 };
