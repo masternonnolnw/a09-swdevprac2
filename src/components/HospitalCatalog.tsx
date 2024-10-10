@@ -1,6 +1,5 @@
 import { FC } from "react";
 import Card from "./Card";
-import Image from "next/image";
 
 interface HospitalCatalogProps {
   hospitalsJson?: HospitalJson;
