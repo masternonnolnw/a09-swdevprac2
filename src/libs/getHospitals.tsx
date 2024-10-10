@@ -7,6 +7,7 @@ export default async function getHospitals(): Promise<HospitalJson> {
   const response = await fetch(
     "https://vaccine-app-backend-six.vercel.app/api/v1/hospitals"
   );
+
   const data = await response.json();
 
   return data;
