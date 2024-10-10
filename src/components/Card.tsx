@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./card.module.css";
 import InteractiveCard from "./InteractiveCard";
 import { Rating } from "@mui/material";
+import Image from "next/image";
 
 interface CardProps {
   hospitalName: string;
@@ -22,7 +23,12 @@ const Card = ({
 }: CardProps) => {
   return (
     <InteractiveCard hid={hid}>
-      <img src={imgSrc} alt="Vaccine Information" className={styles.image} />
+      <Image
+        src={imgSrc}
+        alt="Chulalongkorn Hospital"
+        width={300}
+        height={300}
+      />
       <div className={styles.textContainer}>
         <h2>{hospitalName}</h2>
         <p>description</p>
